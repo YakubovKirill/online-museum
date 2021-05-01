@@ -16,9 +16,19 @@ html, body {
   justify-content: center;
 }
 
+.f-b {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .content {
   height: 100%;
   min-width: $min-container-width;
   max-width: $max-container-width;
   width: 80%;
+}
+
+@media screen and (max-width: 768px) {
+  .content { width: 100%; }
 }
