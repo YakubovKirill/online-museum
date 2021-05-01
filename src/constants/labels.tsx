@@ -1,0 +1,1 @@
+export const PROJECT_NAME = 'Онлайн галлерея ретро техники'
