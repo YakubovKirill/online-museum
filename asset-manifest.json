@@ -3,8 +3,8 @@
     "main.css": "/online-museum/static/css/main.efbd6c96.chunk.css",
     "main.js": "/online-museum/static/js/main.d7600f4b.chunk.js",
     "main.js.map": "/online-museum/static/js/main.d7600f4b.chunk.js.map",
-    "runtime-main.js": "/online-museum/static/js/runtime-main.1f757e14.js",
-    "runtime-main.js.map": "/online-museum/static/js/runtime-main.1f757e14.js.map",
+    "runtime-main.js": "/online-museum/static/js/runtime-main.90f68375.js",
+    "runtime-main.js.map": "/online-museum/static/js/runtime-main.90f68375.js.map",
     "static/js/2.6b9f0e80.chunk.js": "/online-museum/static/js/2.6b9f0e80.chunk.js",
     "static/js/2.6b9f0e80.chunk.js.map": "/online-museum/static/js/2.6b9f0e80.chunk.js.map",
     "index.html": "/online-museum/index.html",
@@ -12,7 +12,7 @@
     "static/js/2.6b9f0e80.chunk.js.LICENSE.txt": "/online-museum/static/js/2.6b9f0e80.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.1f757e14.js",
+    "static/js/runtime-main.90f68375.js",
     "static/js/2.6b9f0e80.chunk.js",
     "static/css/main.efbd6c96.chunk.css",
     "static/js/main.d7600f4b.chunk.js"
