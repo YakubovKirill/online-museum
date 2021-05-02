@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { Redirect } from "react-router"
 import { USERNAME_LENGTH, PASSWORD_LENGTH, ROUTE } from "../../../constants/constants"
-import { LOGIN, USER_NOT_FOUND, WRONG_USERNAME_OR_PASSWORD } from "../../../constants/labels"
+import { ENTER_PASSWORD, ENTER_USERNAME, LOGIN, USER_NOT_FOUND, WRONG_USERNAME_OR_PASSWORD } from "../../../constants/labels"
 import { changeUserAction } from "../../../store/actions"
 import { ROLES, User } from "../../../types"
 
@@ -24,14 +24,16 @@ const guest = {
   role: ROLES.GUEST
 }
 
+const noError = {
+  hasError: false,
+  message: ''
+}
+
 const LoginComponent: React.FC = () => {
   const [userName, setUserName] = useState<string>('guest')
   const [password, setPassword] = useState<string>('')
   const [loggedIn, setLoggedIn] = useState<boolean>(false)
-  const [error, setError] = useState<LoginError>({
-    hasError: false,
-    message: ''
-  })
+  const [error, setError] = useState<LoginError>(noError)
   const dispatch = useDispatch()
 
   const isCorrectString = (inputStr: string): boolean => {
@@ -48,10 +50,7 @@ const LoginComponent: React.FC = () => {
           userName: userName,
           role: ROLES.ADMIN
         }
-        setError({
-          hasError: false,
-          message: ''
-        })
+        setError(noError)
         
         localStorage.setItem('user', JSON.stringify(user))
         dispatch(changeUserAction(user))
@@ -79,10 +78,12 @@ const LoginComponent: React.FC = () => {
 
   const changeName = (e: React.FormEvent<HTMLInputElement>): void => {
     setUserName(e.currentTarget.value)
+    setError(noError)
   }
 
   const changePassword = (e: React.FormEvent<HTMLInputElement>): void => {
     setPassword(e.currentTarget.value)
+    setError(noError)
   }
 
   if(loggedIn) return <Redirect to={ROUTE.DEFAULT} />
@@ -90,26 +91,35 @@ const LoginComponent: React.FC = () => {
   return (
     <div className='login-wrap f-c'>
       <form onSubmit={login}>
-        <input
-          type="text"
-          name="userName"
-          id="userName"
-          maxLength={USERNAME_LENGTH}
-          minLength={3}
-          required
-          onChange={changeName}
-        />
-        <input
-          type="password"
-          name="password"
-          id="password"
-          maxLength={PASSWORD_LENGTH}
-          minLength={3}
-          required
-          onChange={changePassword}
-        />
-        <button type="submit">{LOGIN}</button>
+        <div className='login-header f-c'><p>{LOGIN}</p></div>
+        <div className='input-wrap'>
+          <input
+            type="text"
+            name="userName"
+            id="userName"
+            maxLength={USERNAME_LENGTH}
+            minLength={3}
+            required
+            onChange={changeName}
+            placeholder={ENTER_USERNAME}
+          />
+        </div>
+        <div className='input-wrap'>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            maxLength={PASSWORD_LENGTH}
+            minLength={3}
+            required
+            onChange={changePassword}
+            placeholder={ENTER_PASSWORD}
+          />
+        </div>
+        <div className='input-wrap f-c'><button type="submit">{LOGIN}</button></div>
+        {error.hasError ? <div className='error-text f-c'><p>{error.message}</p></div>: ''}
       </form>
+      
     </div>
   )
 }

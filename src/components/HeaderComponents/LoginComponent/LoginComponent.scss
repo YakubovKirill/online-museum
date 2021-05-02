@@ -1,5 +1,40 @@
+@import '../../../styles/variables.scss';
+
 .login-wrap {
   width: 100%;
   height: 100vh;
   background-color: burlywood;
+  form {
+    max-width: 270px;
+  }
+  .login-header {
+    width: 100%;
+    height: max-content;
+    font-size: $font-size-large;
+    font-weight: bold;
+  }
+
+  .input-wrap {
+    width: 100%;
+    height: max-content;
+
+    input {
+      font-size: $font-size-small;
+      padding: 5px 10px;
+      border-radius: $border-radius-small;
+      outline: none;
+      border: none;
+      margin: 10px 0px;
+      color: $input-text-color;
+    }
+  }
+
+  .error-text {
+    width: 100%;
+    margin-top: 20px;
+    color: $error-text-color;
+    font-size: $font-size-medium;
+    text-align: center;
+    word-wrap: break-word;
+  }
 }
