@@ -1,9 +1,9 @@
-import { ACTIONS, ActionType, User } from "../../types";
+import { ACTIONS, ActionType, ROLES, User } from "../../types";
 
 const initUser: User = {
-    id: 1,
+    id: 0,
     userName: 'guest',
-    role: 'guest'
+    role: ROLES.GUEST
 }
 
 export const userReducer = (

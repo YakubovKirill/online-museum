@@ -10,6 +10,11 @@ html, body {
   height: 100%;
 }
 
+a, a:visited, a:link, a:active {
+  text-decoration: none;
+  color: black;
+}
+
 .f-c {
   display: flex;
   align-items: center;

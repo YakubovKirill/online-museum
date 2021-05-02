@@ -1,7 +1,7 @@
 export type User = {
     id: number
     userName: string
-    role: string
+    role: ROLES
     image?: string
 }
 
@@ -12,4 +12,9 @@ export type ActionType = {
 
 export enum ACTIONS {
     CHANGE_USER = 'CHANGE_USER'
+}
+
+export enum ROLES {
+    ADMIN = 'admin',
+    GUEST = 'guest'
 }
