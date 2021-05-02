@@ -45,13 +45,14 @@ const LoginComponent: React.FC = () => {
     e.preventDefault()
     if (isCorrectString(userName) && isCorrectString(password)) {
       if (userName === testAdminUser.name && password === testAdminUser.password) {
+        // Create user entity
         const user: User = {
           id: 1,
           userName: userName,
           role: ROLES.ADMIN
         }
         setError(noError)
-        
+        // Put user to local and redux storage
         localStorage.setItem('user', JSON.stringify(user))
         dispatch(changeUserAction(user))
         setLoggedIn(true)
@@ -70,6 +71,7 @@ const LoginComponent: React.FC = () => {
   }
 
   useEffect(() => {
+    // Set login status after page reload
     const hasUser = (localStorage.getItem('user') === null) ? false: true;
     const user = JSON.parse(localStorage.getItem('user') || JSON.stringify(guest))
     setLoggedIn(hasUser)
@@ -117,6 +119,8 @@ const LoginComponent: React.FC = () => {
           />
         </div>
         <div className='input-wrap f-c'><button type="submit">{LOGIN}</button></div>
+        
+        {/** Handle data error */}
         {error.hasError ? <div className='error-text f-c'><p>{error.message}</p></div>: ''}
       </form>
       

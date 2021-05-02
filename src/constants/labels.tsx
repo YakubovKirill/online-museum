@@ -1,6 +1,9 @@
 export const PROJECT_NAME = 'Онлайн галлерея ретро техники'
+export const MINI_GALLERY = 'Мини галлерея'
 export const LOGIN = 'Вход'
 export const LOGOUT = 'Выход'
+export const TEXT_DESCRIPTION_FIRST = 'Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text Some text '
+export const GO_TO_GALLERY = 'Перейти в галлерею'
 
 // information messages
 export const ENTER_USERNAME = 'Имя пользователя'

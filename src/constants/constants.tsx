@@ -1,5 +1,6 @@
 export const ROUTE = {
     DEFAULT: '/',
+    GALLERY: '/gallery',
     LOGIN: '/login'
 } as const
 

@@ -1,5 +1,80 @@
+@import '../../styles/variables.scss';
+
 .content {
   width: 95%;
-  height: 1000px;
-  background-color: bisque;
+  height: max-content;
+  .left-img { flex-wrap: wrap; }
+  .right-img { flex-wrap: wrap-reverse; }
+  .description-block {
+    margin: 50px 0px;
+
+    .description-image {
+      width: 300px;
+      height: 200px;
+      border-radius: $border-radius-medium;
+      box-shadow: 5px 5px 20px rgba(173, 173, 173, 0.829);
+    }
+    .description-text {
+      max-width: 350px;
+      margin: 20px 20px;
+      align-items: center;
+      font-size: $font-size-small;
+      p {
+        margin: 10px;
+      }
+    }
+  }
+
+  .mini-gallery {
+    width: 100%;
+    height: max-content;
+    background-color: rgba(222, 222, 222, 0.671);
+    border-radius: $border-radius-small;
+    margin-bottom: 50px;
+
+    .header {
+      margin: 20px 0px;
+      font-size: $font-size-medium;
+      font-weight: bold;
+
+      p {
+        margin: 20px 0px;
+      }
+    }
+
+    .gallery {
+      flex-wrap: wrap;
+      .mini-item {
+        width: 280px;
+        height: 130px;
+        background-color: burlywood;
+        border-radius: $border-radius-small;
+        margin: 10px 10px;
+
+        &:hover {
+          cursor: pointer;
+          box-shadow: 1px 1px 10px rgba(173, 173, 173, 0.829);
+        }
+      }
+    }
+
+    .row {
+      width: 100%;
+      height: max-content;
+      margin: 20px 0px;
+      padding: 20px 0px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .content .description-block .description-image {
+    width: 250px;
+      height: 180px;
+  }
+
+  .content .mini-gallery .gallery .mini-item {
+    width: 200px;
+    height: 100px;
+  }
 }
