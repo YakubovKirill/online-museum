@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, Route } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { ROUTE } from "../../constants/constants"
 import { GO_TO_GALLERY, MINI_GALLERY, TEXT_DESCRIPTION_FIRST } from "../../constants/labels"
 
