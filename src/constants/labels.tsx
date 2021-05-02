@@ -1,6 +1,6 @@
 export const PROJECT_NAME = 'Онлайн галлерея ретро техники'
-export const LOGIN = 'Login'
-export const LOGOUT = 'Logout'
+export const LOGIN = 'Вход'
+export const LOGOUT = 'Выход'
 
 // information messages
 export const ENTER_USERNAME = 'Имя пользователя'
